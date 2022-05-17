@@ -13,7 +13,7 @@ const RepositoriesProvider = ({ children }) => {
         setTextFilter(value)
     }, 500)
 
-    const repositoryNodes = !loading ? data.repositories.edges.map((edge) => edge.node).sort((a, b) => {
+    const repositoryNodes = !loading && data?.repositories ? data.repositories.edges.map((edge) => edge.node).sort((a, b) => {
         switch (filter) {
           case "latest":
             return b.createdAt - a.createdAt;

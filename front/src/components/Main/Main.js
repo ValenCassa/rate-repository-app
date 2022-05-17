@@ -7,6 +7,7 @@ import SignIn from '../SignIn/SignIn'
 import { AnimatePresence } from 'moti'
 import RepositoryReview from '../RepositoryView/RepositoryView'
 import Review from '../Review/Review'
+import UserReviews from '../UserReviews/UserReviews'
 
 const styles = StyleSheet.create({
     container: {
@@ -26,6 +27,7 @@ const Main = () => {
                     <Route path='/:id' element={<RepositoryReview />} exact />
                     <Route path='/sign-in' element={<SignIn type={'sign-in'}/>} exact />
                     <Route path='/log-in' element={<SignIn type={'login'}/>} exact />
+                    <Route path='/reviews' element={<UserReviews />} exact />
                     <Route path='/create-review' element={<Review />} exact />
                     <Route path='*' element={<Navigate to={'/'} replace />} />
                 </Routes>

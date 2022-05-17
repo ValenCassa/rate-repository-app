@@ -1,4 +1,4 @@
-import { StyleSheet, Pressable, View, Button } from "react-native";
+import { StyleSheet, Pressable, View, Button, ScrollView } from "react-native";
 import Constants from "expo-constants";
 import Text from "../Miscellaneous/Text";
 import theme from "../../theme/theme";
@@ -10,7 +10,6 @@ import useUser from "../../../hooks/useUser";
 const styles = StyleSheet.create({
     container: {
         paddingTop: Constants.statusBarHeight + 20,
-        paddingLeft: 15,
         paddingBottom: 10,
         backgroundColor: theme.colors.white,
         flexDirection: 'row',
@@ -47,12 +46,14 @@ const AppBar = () => {
 
     return (
         <View style={styles.container}>
+            <ScrollView horizontal>
             <Tab href="/" title="Repositories" />
             {user
             ? (
                 <>
                 <Tab onPress={signOut} title='Log Out' />
                 <Tab href={'/create-review'} title='Create Review' />
+                <Tab href={'/reviews'} title='Reviews' />
                 </>
             )
             : (
@@ -62,6 +63,7 @@ const AppBar = () => {
                 </>
             )
             }
+            </ScrollView>
 
         </View>
     )

@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
 
 const ItemSeparator = () => <View style={{ height: 20 }} />
 
-const Review = ({ review }) => {
+export const Review = ({ review }) => {
     return (
         <View style={styles.container}>
             <View style={styles.right}>

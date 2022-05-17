@@ -81,3 +81,27 @@ export const GET_FILTERED_REPOSITORIES = gql`
 
   ${REPO_FRAGMENT}
 `
+
+export const GET_USER_REVIEWS = gql`
+    query {
+      me {
+        reviews {
+          edges {
+            node {
+              user {
+                username
+              }
+              id
+              text
+              rating
+              createdAt
+              repository {
+                fullName
+                id
+              }
+            }
+          }
+        }
+      }
+    }
+`
